@@ -4,11 +4,9 @@ import FilledLineChart from "./filledlinechart.js"
 
 export default function Home() {
   return (
-    <div>
-
-
-    <LineChart/>
-    {/* <FilledLineChart/> */}
-    </div>
+    <>
+    {/* <LineChart/> */}
+    <FilledLineChart/>
+    </>
   )
 }

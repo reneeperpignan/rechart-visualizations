@@ -7,27 +7,22 @@ function FilledLineChart() {
         var myChart = new Chart(ctx, {
             type: 'line',
             data: {
-                labels: ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+                labels: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
                 datasets: [{
-                    data: [86, 114, 106, 106, 107, 111, 133],
-                    label: "Applied",
+                    data: [125, 130, 120, 90, 80, 70, 60, 50, 50, 70, 90, 100],
+                    label: "Mental Health",
                     borderColor: "rgb(62,149,205)",
                     backgroundColor: "rgb(62,149,205,0.1)",
                 }, {
-                    data: [70, 90, 44, 60, 83, 90, 100],
-                    label: "Accepted",
+                    data: [70, 90, 44, 60, 83, 90, 100, 90, 80, 93, 110, 80],
+                    label: "Drug",
                     borderColor: "rgb(60,186,159)",
                     backgroundColor: "rgb(60,186,159,0.1)",
                 }, {
-                    data: [10, 21, 60, 44, 17, 21, 17],
-                    label: "Pending",
+                    data: [10, 21, 60, 44, 17, 21, 17, 44, 40, 25, 30, 40],
+                    label: "Accident",
                     borderColor: "rgb(255,165,0)",
                     backgroundColor: "rgb(255,165,0,0.1)",
-                }, {
-                    data: [6, 3, 2, 2, 7, 0, 16],
-                    label: "Rejected",
-                    borderColor: "rgb(196,88,80)",
-                    backgroundColor: "rgb(196,88,80,0.1)",
                 }
                 ]
             },
