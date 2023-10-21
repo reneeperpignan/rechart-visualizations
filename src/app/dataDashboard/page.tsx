@@ -117,24 +117,24 @@ function DataDashboard() {
   )) : "Loading..."
 
   const simple_barchart = dashboardData ? (
-      <BarChart
-        width={600}
-        height={300}
-        data={dashboardData}
-        margin={{
-          top: 5,
-          right: 30,
-          left: 20,
-          bottom: 5,
-        }}
-      >
-        <CartesianGrid strokeDasharray="3 3" />
-        <XAxis dataKey="question" widths={100} />
-        <YAxis />
-        <Tooltip />
-        <Bar dataKey="answer" fill="#8884d8" activeBar={<Rectangle fill="pink" stroke="blue" />} />
-        <Bar dataKey="views" fill="#82ca9d" activeBar={<Rectangle fill="orange" stroke="blue" />} />
-      </BarChart>
+    <BarChart
+      width={600}
+      height={300}
+      data={dashboardData}
+      margin={{
+        top: 5,
+        right: 30,
+        left: 20,
+        bottom: 5,
+      }}
+    >
+      <CartesianGrid strokeDasharray="3 3" />
+      <XAxis dataKey="question" />
+      <YAxis />
+      <Tooltip />
+      <Bar dataKey="answer" fill="#8884d8" activeBar={<Rectangle fill="pink" stroke="blue" />} />
+      <Bar dataKey="views" fill="#82ca9d" activeBar={<Rectangle fill="orange" stroke="blue" />} />
+    </BarChart>
   ) : <></>;
 
   const stacked_barchart = dashboardData ? (
@@ -150,11 +150,33 @@ function DataDashboard() {
       }}
     >
       <CartesianGrid strokeDasharray="3 3" />
-      <XAxis dataKey="question" widths={100} />
+      <XAxis dataKey="question" />
       <YAxis />
       <Tooltip />
-        <Bar dataKey="answer" stackId="a" fill="#8884d8" />
-        <Bar dataKey="views" stackId="a" fill="#82ca9d" />
+      <Bar dataKey="answer" stackId="a" fill="#8884d8" />
+      <Bar dataKey="views" stackId="a" fill="#82ca9d" />
+    </BarChart>
+  ) : <></>;
+
+  const mixed_barchart = dashboardData ? (
+    <BarChart
+      width={600}
+      height={300}
+      data={data}
+      margin={{
+        top: 5,
+        right: 30,
+        left: 20,
+        bottom: 5,
+      }}
+    >
+      <CartesianGrid strokeDasharray="3 3" />
+      <XAxis dataKey="name" />
+      <YAxis />
+      <Tooltip />
+      <Bar dataKey="pv" stackId="a" fill="#8884d8" />
+      <Bar dataKey="uv" stackId="a" fill="#82ca9d" />
+      <Bar dataKey="amt" fill="#ffc658" />
     </BarChart>
   ) : <></>;
 
@@ -172,7 +194,7 @@ function DataDashboard() {
         {stacked_barchart}
       </ul>
       <ul>
-        {simple_barchart}
+        {mixed_barchart}
       </ul>
     </div>
   );
