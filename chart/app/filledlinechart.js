@@ -1,11 +1,14 @@
 "use client";
+
 import { useEffect } from "react"
 import { Chart } from "chart.js";
+
 function FilledLineChart() {
     useEffect(() => {
         var ctx = document.getElementById('myChart').getContext('2d');
+        
         var myChart = new Chart(ctx, {
-            type: 'line',
+            type: 'scatter',
             data: {
                 labels: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
                 datasets: [{
